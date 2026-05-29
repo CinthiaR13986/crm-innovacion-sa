@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportes - CRM Innovación S.A.</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Reportes Gerenciales</h1>
+    <p>Análisis comercial, oportunidades y Data Warehouse</p>
+  </header>
+
+  <nav>
+    <a href="./index.html">Inicio</a>
+    <a href="./clientes.html">Clientes</a>
+    <a href="./oportunidades.html">Oportunidades</a>
+    <a href="./actividades.html">Actividades</a>
+    <a href="./reportes.html">Reportes</a>
+  </nav>
+
+  <main>
+<section>
+  <h2>Procesos de actualización</h2>
+  <p>Ejecuta el proceso de actualización de la réplica local desde la base principal.</p>
+
+  <div id="mensajeProcesos" class="alert"></div>
+
+  <button onclick="refrescarReplicaLocal()">Refrescar réplica local</button>
+</section>
+
+   <section>
+  <h2>Resumen gerencial</h2>
+  <button onclick="cargarResumen()">Actualizar resumen</button>
+  <br><br>
+
+  <div id="cardsResumen" class="dashboard-cards"></div>
+</section>
+
+    <section>
+      <h2>Oportunidades por estado</h2>
+
+      <select id="estado">
+        <option value="ABIERTA">ABIERTA</option>
+        <option value="GANADA">GANADA</option>
+        <option value="PERDIDA">PERDIDA</option>
+      </select>
+      
+      <button onclick="cargarPorEstado()">Consultar</button>
+      <br><br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Número</th>
+            <th>Nombre</th>
+            <th>Cliente</th>
+            <th>Gestor</th>
+            <th>Etapa</th>
+            <th>Estado</th>
+            <th>Monto potencial</th>
+            <th>Monto ponderado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaEstado"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Oportunidades por fecha</h2>
+
+      <form id="formFecha">
+        <input type="date" id="fecha_inicio" required>
+        <input type="date" id="fecha_fin" required>
+        <button type="submit">Consultar por fecha</button>
+      </form>
+
+      <br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Número</th>
+            <th>Nombre</th>
+            <th>Cliente</th>
+            <th>Gestor</th>
+            <th>Estado</th>
+            <th>Fecha inicio</th>
+            <th>Monto potencial</th>
+          </tr>
+        </thead>
+        <tbody id="tablaFecha"></tbody>
+      </table>
+    </section>
+
+<section>
+  <h2>Oportunidades por gestor comercial</h2>
+
+  <select id="gestor_id">
+    <option value="">Seleccione gestor comercial</option>
+  </select>
+
+  <button onclick="cargarPorGestor()">Consultar por gestor</button>
+
+  <br><br>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Número</th>
+        <th>Nombre</th>
+        <th>Cliente</th>
+        <th>Contacto</th>
+        <th>Etapa</th>
+        <th>%</th>
+        <th>Estado</th>
+        <th>Fecha inicio</th>
+        <th>Monto potencial</th>
+        <th>Monto ponderado</th>
+      </tr>
+    </thead>
+    <tbody id="tablaGestor"></tbody>
+  </table>
+</section>
+
+
+    <section>
+      <h2>Data Warehouse - Vista analítica</h2>
+      <p>Datos cargados desde el proceso ETL hacia la base DW_CRM_Innovacion.</p>
+
+
+      <br><br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Número</th>
+            <th>Cliente</th>
+            <th>Gestor</th>
+            <th>Etapa</th>
+            <th>%</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Monto potencial</th>
+            <th>Monto ponderado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaDW"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="./js/reportes.js"></script>
+</body>
+</html>

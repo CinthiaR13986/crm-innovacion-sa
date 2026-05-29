@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actividades - CRM Innovación S.A.</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gestión de Actividades</h1>
+    <p>Registro de llamadas, reuniones, tareas y notas comerciales</p>
+  </header>
+
+  <nav>
+    <a href="./index.html">Inicio</a>
+    <a href="./clientes.html">Clientes</a>
+    <a href="./oportunidades.html">Oportunidades</a>
+    <a href="./actividades.html">Actividades</a>
+    <a href="./reportes.html">Reportes</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Crear actividad</h2>
+
+      <div id="mensaje" class="alert"></div>
+
+      <form id="actividadForm">
+        <select id="cliente_id" required>
+          <option value="">Seleccione cliente</option>
+        </select>
+
+        <select id="contacto_id">
+          <option value="">Seleccione contacto</option>
+        </select>
+
+        <select id="oportunidad_id">
+          <option value="">Seleccione oportunidad</option>
+        </select>
+
+        <select id="responsable_id" required>
+          <option value="">Seleccione responsable</option>
+        </select>
+
+        <select id="tipo_actividad" required onchange="configurarCamposPorTipo()">
+  <option value="">Seleccione tipo de actividad</option>
+  <option value="LLAMADA">Llamada telefónica</option>
+  <option value="REUNION">Reunión</option>
+  <option value="TAREA">Tarea</option>
+  <option value="NOTA">Nota</option>
+</select>
+
+        <input type="text" id="asunto" placeholder="Asunto" required>
+
+        <div class="form-field" id="grupoFecha">
+  <input type="date" id="fecha" required>
+</div>
+
+<div class="form-field" id="grupoHoraInicio">
+  <input type="time" id="hora_inicio">
+</div>
+
+<div class="form-field" id="grupoHoraFinal">
+  <input type="time" id="hora_final">
+</div>
+
+<div class="form-field" id="grupoPrioridad">
+  <select id="prioridad" required>
+    <option value="">Seleccione prioridad</option>
+    <option value="BAJA">Baja</option>
+    <option value="NORMAL">Normal</option>
+    <option value="ALTA">Alta</option>
+  </select>
+</div>
+
+<div class="form-field" id="grupoEstado">
+  <select id="estado">
+    <option value="">Seleccione estado</option>
+  </select>
+</div>
+
+<div class="form-field" id="grupoCalle">
+  <input type="text" id="calle" placeholder="Calle, si aplica">
+</div>
+
+<div class="form-field" id="grupoCiudad">
+  <input type="text" id="ciudad" placeholder="Ciudad, si aplica">
+</div>
+
+<div class="form-field" id="grupoSala">
+  <input type="text" id="sala" placeholder="Sala, si aplica">
+</div>
+
+<textarea id="comentario" placeholder="Comentario de la actividad"></textarea>
+
+        <button type="submit">Guardar actividad</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Listado de actividades</h2>
+      <button onclick="cargarActividades()">Actualizar listado</button>
+      <br><br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Contacto</th>
+            <th>Oportunidad</th>
+            <th>Responsable</th>
+            <th>Tipo</th>
+            <th>Asunto</th>
+            <th>Fecha</th>
+            <th>Duración</th>
+            <th>Prioridad</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaActividades"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="./js/actividades.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Node
+node_modules/
+npm-debug.log
+
+# Variables de entorno
+.env
+backend/.env
+
+# Logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# VS Code opcional
+.vscode/
+
+# SQL Server backups opcional
+*.bak
+*.mdf
+*.ldf

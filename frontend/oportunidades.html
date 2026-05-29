@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pipeline CRM - Innovación S.A.</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Pipeline de Oportunidades</h1>
+    <p>Vista tipo CRM para seguimiento comercial por etapas</p>
+  </header>
+
+  <nav>
+    <a href="./index.html">Inicio</a>
+    <a href="./clientes.html">Clientes</a>
+    <a href="./oportunidades.html">Oportunidades</a>
+    <a href="./reportes.html">Reportes</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Crear oportunidad</h2>
+
+      <div id="mensaje" class="alert"></div>
+
+      <form id="oportunidadForm">
+        <input type="text" id="numero_oportunidad" placeholder="Número oportunidad" required>
+        <input type="text" id="nombre_oportunidad" placeholder="Nombre oportunidad" required>
+
+        <select id="cliente_id" required>
+          <option value="">Seleccione cliente</option>
+        </select>
+
+        <select id="contacto_id" required>
+          <option value="">Seleccione contacto</option>
+        </select>
+
+        <select id="gestor_id" required>
+          <option value="">Seleccione gestor comercial</option>
+        </select>
+
+        <select id="asistente_id">
+          <option value="">Seleccione asistente</option>
+        </select>
+
+        <select id="gerente_id">
+          <option value="">Seleccione gerente</option>
+        </select>
+
+        <select id="etapa_id" required>
+          <option value="">Seleccione etapa</option>
+        </select>
+
+        <select id="tipo_oportunidad" required>
+          <option value="VENTA">Venta</option>
+          <option value="COMPRA">Compra</option>
+        </select>
+
+        <input type="date" id="fecha_inicio" required>
+        <input type="number" id="cierre_planificado_dias" placeholder="Cierre planificado en días" required>
+        <input type="number" id="monto_potencial" placeholder="Monto potencial" step="0.01" required>
+
+        <button type="submit">Crear oportunidad</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Pipeline Comercial</h2>
+      <button onclick="cargarPipeline()">Actualizar pipeline</button>
+      <br><br>
+
+      <div id="pipeline" class="pipeline"></div>
+    </section>
+
+    <section>
+      <h2>Listado general</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Número</th>
+            <th>Nombre</th>
+            <th>Cliente</th>
+            <th>Gestor</th>
+            <th>Etapa</th>
+            <th>%</th>
+            <th>Estado</th>
+            <th>Monto potencial</th>
+            <th>Monto ponderado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaOportunidades"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="./js/oportunidades.js"></script>
+</body>
+</html>

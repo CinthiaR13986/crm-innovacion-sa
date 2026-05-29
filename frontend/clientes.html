@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clientes - CRM Innovación S.A.</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gestión de Clientes</h1>
+    <p>Administración de cuentas comerciales y clientes potenciales</p>
+  </header>
+
+  <nav>
+    <a href="./index.html">Inicio</a>
+    <a href="./clientes.html">Clientes</a>
+    <a href="./oportunidades.html">Oportunidades</a>
+    <a href="./reportes.html">Reportes</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2 id="tituloFormulario">Crear cliente</h2>
+
+      <div id="mensaje" class="alert"></div>
+
+      <form id="clienteForm">
+        <input type="hidden" id="cliente_id">
+
+        <input type="text" id="nombre_comercial" placeholder="Nombre comercial" required>
+        <input type="text" id="direccion" placeholder="Dirección" required>
+        <input type="text" id="telefono" placeholder="Teléfono">
+        <input type="text" id="celular" placeholder="Celular">
+        <input type="email" id="correo" placeholder="Correo">
+
+        <select id="division_cliente" required>
+          <option value="">Seleccione división</option>
+          <option value="CLIENTE_POTENCIAL">Cliente potencial</option>
+          <option value="CLIENTE_FINAL">Cliente final</option>
+        </select>
+
+        <button type="submit" id="btnGuardar">Guardar cliente</button>
+        <button type="button" id="btnCancelar" onclick="cancelarEdicion()" style="display:none;">
+          Cancelar edición
+        </button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Listado de clientes</h2>
+      <button onclick="cargarClientes()">Actualizar listado</button>
+      <br><br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre comercial</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Celular</th>
+            <th>Correo</th>
+            <th>División</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaClientes"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="./js/clientes.js"></script>
+</body>
+</html>

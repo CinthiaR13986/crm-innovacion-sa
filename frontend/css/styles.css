@@ -1,0 +1,277 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #222;
+}
+
+header {
+  background: #1f3a5f;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  background: #162b46;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  text-decoration: none;
+  color: #222;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 15px;
+}
+
+button {
+  background: #1f3a5f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #2c5282;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 9px;
+  text-align: left;
+}
+
+th {
+  background: #1f3a5f;
+  color: white;
+}
+
+.alert {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  display: none;
+}
+
+.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(230px, 1fr));
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+}
+
+.pipeline-column {
+  background: #eef2f7;
+  border-radius: 10px;
+  padding: 12px;
+  min-height: 300px;
+  border: 1px solid #d5dce6;
+}
+
+.pipeline-column h3 {
+  margin-top: 0;
+  color: #1f3a5f;
+  font-size: 16px;
+}
+
+.pipeline-column .percent {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.opportunity-card {
+  background: white;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  border-left: 5px solid #1f3a5f;
+}
+
+.opportunity-card h4 {
+  margin: 0 0 8px 0;
+  color: #222;
+}
+
+.opportunity-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-open {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.badge-win {
+  background: #d4edda;
+  color: #155724;
+}
+
+.badge-lost {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.card-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.card-actions button {
+  font-size: 12px;
+  padding: 7px;
+}
+
+.btn-win {
+  background: #198754;
+}
+
+.btn-lost {
+  background: #dc3545;
+}
+
+.btn-next {
+  background: #0d6efd;
+}
+
+td button {
+  margin: 3px;
+}
+
+#btnCancelar {
+  background: #6c757d;
+}
+
+#btnCancelar:hover {
+  background: #5a6268;
+}
+
+textarea {
+  padding: 10px;
+  font-size: 15px;
+  resize: vertical;
+  min-height: 80px;
+  font-family: Arial, sans-serif;
+}
+
+form textarea {
+  grid-column: span 2;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.dashboard-card {
+  background: #ffffff;
+  border-left: 6px solid #1f3a5f;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+}
+
+.dashboard-card h3 {
+  margin: 0 0 10px 0;
+  color: #1f3a5f;
+}
+
+.dashboard-card .metric {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 5px 0 10px 0;
+  color: #222;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,15 @@
+USE master;
+GO
+
+IF DB_ID('CRM_Innovacion') IS NOT NULL
+BEGIN
+    ALTER DATABASE CRM_Innovacion SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE CRM_Innovacion;
+END;
+GO
+
+CREATE DATABASE CRM_Innovacion;
+GO
+
+USE CRM_Innovacion;
+GO
